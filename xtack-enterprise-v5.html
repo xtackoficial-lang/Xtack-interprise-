@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>XTACK ENTERPRISE | Gerador Pro v5.0</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"
+      onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style id="fa-fallback-style" disabled>
+  .fas::before, .fab::before, .far::before { font-family: inherit !important; font-style: normal; }
+  .fa-layer-group::before { content: '⊞'; }
+  .fa-lock::before { content: '🔒'; }
+  .fa-unlock-alt::before { content: '🔓'; }
+  .fa-magnifying-glass::before { content: '🔍'; }
+  .fa-terminal::before { content: '⌨'; }
+  .fa-sliders::before { content: '⚙'; }
+  .fa-copy::before { content: '⎘'; }
+  .fa-right-from-bracket::before { content: '⏏'; }
+  .fa-check::before { content: '✓'; }
+  .fa-check-circle::before { content: '✓'; }
+  .fa-triangle-exclamation::before { content: '⚠'; }
+  .fa-circle-xmark::before { content: '✕'; }
+  .fa-chart-bar::before { content: '▦'; }
+  .fa-utensils::before { content: '🍴'; }
+  .fa-mobile-screen::before { content: '📱'; }
+  .fa-briefcase::before { content: '💼'; }
+  .fa-house-chimney-window::before { content: '🏠'; }
+  .fa-rocket::before { content: '🚀'; }
+  .fa-stethoscope::before { content: '⚕'; }
+  .fa-code::before { content: '⟨/⟩'; }
+  .fa-scale-balanced::before { content: '⚖'; }
+  .fa-dumbbell::before { content: '⛹'; }
+  .fa-gears::before { content: '⚙'; }
+  .fa-chart-line::before { content: '📈'; }
+  .fa-plane-departure::before { content: '✈'; }
+  .fa-shirt::before { content: '👕'; }
+  .fa-pills::before { content: '💊'; }
+  .fa-palette::before { content: '🎨'; }
+  .fa-language::before { content: '🌐'; }
+  .fa-hard-hat::before { content: '⛑'; }
+  .fa-graduation-cap::before { content: '🎓'; }
+  .fa-cart-shopping::before { content: '🛒'; }
+  .fa-scissors::before { content: '✂'; }
+  .fa-truck-fast::before { content: '🚛'; }
+  .fa-camera::before { content: '📷'; }
+  .fa-server::before { content: '🖥'; }
+  .fa-hand-holding-heart::before { content: '🤝'; }
+  .fa-newspaper::before { content: '📰'; }
+  .fa-music::before { content: '🎵'; }
+  .fa-shield-halved::before { content: '🛡'; }
+  .fa-paw::before { content: '🐾'; }
+  .fa-bowl-food::before { content: '🍜'; }
+  .fa-coins::before { content: '🪙'; }
+  .fa-map-location-dot::before { content: '📍'; }
+  .fa-keyboard::before { content: '⌨'; }
+  .fa-credit-card::before { content: '💳'; }
+  .fa-database::before { content: '🗄'; }
+  .fa-whatsapp::before { content: 'W'; }
+  .fa-star::before { content: '★'; }
+  .fa-wine-glass::before { content: '🍷'; }
+  .fa-spa::before { content: '🌸'; }
+  .fa-solar-panel::before { content: '☀'; }
+  .fa-fish::before { content: '🐟'; }
+  .fa-landmark::before { content: '🏛'; }
+  .fa-bus::before { content: '🚌'; }
+  .fa-hotel::before { content: '🏨'; }
+  .fa-leaf::before { content: '🌿'; }
+  .fa-bolt::before { content: '⚡'; }
+</style>
+
+<script>
+(function() {
+  function checkFA() {
+    var testEl = document.createElement('span');
+    testEl.className = 'fas fa-check';
+    testEl.style.cssText = 'position:absolute;visibility:hidden;';
+    document.body.appendChild(testEl);
+    var computed = window.getComputedStyle(testEl, '::before').content;
+    document.body.removeChild(testEl);
+    if (!computed || computed === 'none' || computed === '') {
+      document.getElementById('fa-fallback-style').removeAttribute('disabled');
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() { setTimeout(checkFA, 600); });
+  } else {
+    setTimeout(checkFA, 600);
+  }
+})();
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --neon: #00ffaa;
+  --neon2: #00cc88;
+  --neon-dim: rgba(0,255,170,0.12);
+  --surface: #060b10;
+  --panel: #0b1520;
+  --panel2: #0f1d2e;
+  --border: #16283d;
+  --border2: rgba(0,255,170,0.15);
+  --muted: #3a5168;
+  --muted2: #5a7a9a;
+  --text: #a8c4d8;
+  --text2: #cce0ef;
+  --white: #f0f8ff;
+  --sb-w: 260px;
+  --rp-w: 275px;
+  --top-h: 56px;
+  --nav-h: 56px;
+  --radius: 10px;
+  --radius-lg: 14px;
+}
+
+html, body {
+  height: 100%;
+  background: var(--surface);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,255,170,0.25); }
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,170,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,170,0.018) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none; z-index: 0;
+}
+.orb {
+  position: fixed; border-radius: 50%;
+  filter: blur(90px); pointer-events: none; z-index: 0;
+}
+
+/* LOGIN */
+#loginOverlay {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(6,11,16,0.97);
+  backdrop-filter: blur(20px);
+  padding: 16px;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#loginOverlay.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.login-card {
+  width: 100%; max-width: 380px;
+  background: var(--panel);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 60px rgba(0,255,170,0.05);
+  position: relative; overflow: hidden;
+  animation: cardIn 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.login-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon), transparent);
+}
+.login-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+.login-logo-text .brand { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 16px; color: var(--white); }
+.login-logo-text .brand span { color: var(--neon); }
+.login-logo-text .sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted2); letter-spacing: 0.2em; text-transform: uppercase; margin-top: 2px; }
+.login-heading h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; color: var(--white); }
+.login-heading p { font-size: 13px; color: var(--muted2); margin-top: 4px; }
+.login-divider { height: 1px; background: var(--border); margin: 18px 0; }
+.login-field { margin-bottom: 16px; }
+.login-field label { display: block; font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.18em; margin-bottom: 6px; }
+.input-wrap { position: relative; }
+.input-wrap i { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 12px; pointer-events: none; transition: color 0.2s; }
+.login-input {
+  width: 100%; background: rgba(6,11,16,0.9); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 11px 14px 11px 38px;
+  font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text2);
+  outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.login-input::placeholder { color: var(--muted); }
+.login-input:focus { border-color: rgba(0,255,170,0.4); box-shadow: 0 0 0 3px rgba(0,255,170,0.07); }
+.login-error {
+  display: none; align-items: center; gap: 7px;
+  background: rgba(255,60,60,0.07); border: 1px solid rgba(255,60,60,0.2);
+  border-radius: 8px; padding: 9px 12px; font-size: 12px; color: #ff6b6b; margin-bottom: 14px;
+}
+.login-error.show { display: flex; }
+.btn-login {
+  width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: linear-gradient(135deg, var(--neon), var(--neon2)); color: #020d07;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px;
+  padding: 12px 20px; border-radius: var(--radius); border: none; cursor: pointer;
+  transition: all 0.2s; box-shadow: 0 4px 16px rgba(0,255,170,0.2);
+}
+.btn-login:hover { box-shadow: 0 8px 28px rgba(0,255,170,0.4); transform: translateY(-1px); }
+.login-footer { margin-top: 18px; text-align: center; font-size: 11px; color: var(--muted); }
+.login-footer span { color: var(--neon); font-weight: 600; }
+
+/* DESKTOP APP */
+.app {
+  position: fixed; inset: 0; z-index: 1;
+  display: grid;
+  grid-template-columns: var(--sb-w) 1fr var(--rp-w);
+  grid-template-rows: var(--top-h) 1fr;
+  grid-template-areas: "sidebar topbar topbar" "sidebar editor rpanel";
+}
+
+/* SIDEBAR */
+.sidebar {
+  grid-area: sidebar;
+  display: flex; flex-direction: column;
+  background: rgba(9,15,24,0.98);
+  border-right: 1px solid var(--border);
+  overflow: hidden;
+}
+.sb-logo { padding: 14px 16px 12px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+.logo-row { display: flex; align-items: center; gap: 10px; }
+.logo-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px; color: var(--white); line-height: 1.2; }
+.logo-title span { color: var(--neon); }
+.logo-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 2px; }
+
+.sb-section-header { padding: 12px 16px 7px; flex-shrink: 0; }
+.sb-section-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.2em; display: flex; align-items: center; justify-content: space-between; }
+.cnt-pill { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--neon); background: rgba(0,255,170,0.08); border: 1px solid rgba(0,255,170,0.2); border-radius: 6px; padding: 2px 8px; }
+
+.sb-search { padding: 0 10px 8px; flex-shrink: 0; }
+.s-wrap { position: relative; }
+.s-wrap i { position: absolute; left: 9px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 10px; pointer-events: none; }
+.s-inp {
+  width: 100%; background: rgba(6,11,16,0.8); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 10px 8px 28px;
+  font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--text);
+  outline: none; transition: border-color 0.2s;
+}
+.s-inp::placeholder { color: var(--muted); }
+.s-inp:focus { border-color: rgba(0,255,170,0.35); }
+
+.tpl-list { flex: 1; overflow-y: auto; padding: 0 6px 10px; }
+.t-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 8px; border-radius: 9px;
+  cursor: pointer; border: 1px solid transparent; margin-bottom: 2px;
+  transition: all 0.15s; position: relative;
+}
+.t-item:hover { background: rgba(0,255,170,0.04); border-color: rgba(0,255,170,0.1); }
+.t-item.active { background: rgba(0,255,170,0.07); border-color: rgba(0,255,170,0.22); }
+.t-item.active::before {
+  content: ''; position: absolute; left: 0; top: 25%; bottom: 25%;
+  width: 3px; background: var(--neon); border-radius: 0 3px 3px 0;
+  box-shadow: 0 0 8px var(--neon);
+}
+.t-ico {
+  width: 28px; height: 28px; border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; flex-shrink: 0;
+  border: 1px solid rgba(0,255,170,0.1); background: rgba(0,255,170,0.05); color: var(--neon);
+}
+.t-item:hover .t-ico, .t-item.active .t-ico { background: rgba(0,255,170,0.12); border-color: rgba(0,255,170,0.3); }
+.t-info { flex: 1; min-width: 0; }
+.t-name { font-size: 11px; font-weight: 500; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.t-cat { font-size: 9px; color: var(--muted2); margin-top: 1px; }
+.t-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #1d3050; flex-shrink: 0; }
+
+.sb-foot {
+  padding: 10px 14px; border-top: 1px solid var(--border); flex-shrink: 0;
+  display: flex; align-items: center; gap: 10px;
+}
+.avatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: rgba(0,255,170,0.1); border: 1px solid rgba(0,255,170,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px; color: var(--neon); flex-shrink: 0;
+}
+.foot-name { font-size: 11px; font-weight: 600; color: var(--white); line-height: 1.3; }
+.foot-role { font-size: 9px; color: var(--neon); }
+.online-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--neon); box-shadow: 0 0 6px var(--neon); animation: blink 2s ease-in-out infinite; margin-left: auto; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* TOPBAR */
+.topbar {
+  grid-area: topbar;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 18px; background: rgba(6,11,16,0.95);
+  border-bottom: 1px solid var(--border); border-left: 1px solid var(--border);
+}
+.tb-left { display: flex; align-items: center; gap: 10px; }
+.tb-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 500; color: var(--neon); text-transform: uppercase; letter-spacing: 0.22em; }
+.tb-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--white); margin-top: 1px; }
+.ver-pill { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--neon); background: rgba(0,255,170,0.07); border: 1px solid rgba(0,255,170,0.18); border-radius: 20px; padding: 3px 9px; }
+.tb-right { display: flex; align-items: center; gap: 8px; }
+.btn-logout {
+  display: flex; align-items: center; gap: 5px;
+  background: transparent; border: 1px solid var(--border); border-radius: 7px; padding: 6px 11px;
+  font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+  color: var(--muted2); cursor: pointer; transition: all 0.2s;
+}
+.btn-logout:hover { border-color: rgba(255,80,80,0.3); color: #ff6b6b; background: rgba(255,80,80,0.05); }
+.btn-copy {
+  display: flex; align-items: center; gap: 7px;
+  background: linear-gradient(135deg, var(--neon), var(--neon2)); color: #020d07;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  padding: 8px 16px; border-radius: 7px; border: none; cursor: pointer;
+  transition: all 0.2s; box-shadow: 0 2px 12px rgba(0,255,170,0.2);
+}
+.btn-copy:hover { box-shadow: 0 6px 22px rgba(0,255,170,0.4); transform: translateY(-1px); }
+
+/* EDITOR */
+.editor {
+  grid-area: editor;
+  display: flex; flex-direction: column;
+  padding: 14px 14px 14px 18px; gap: 10px;
+  overflow: hidden; border-left: 1px solid var(--border); min-height: 0;
+}
+.tabs { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+.tab {
+  font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 6px 12px; border-radius: 7px; border: 1px solid transparent;
+  cursor: pointer; color: var(--muted2); background: transparent; transition: all 0.15s;
+  display: flex; align-items: center; gap: 5px;
+}
+.tab:hover { color: var(--text2); border-color: var(--border); }
+.tab.active { color: var(--neon); background: rgba(0,255,170,0.07); border-color: rgba(0,255,170,0.22); }
+.char-cnt { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); }
+
+.ed-box {
+  flex: 1; display: flex; flex-direction: column;
+  background: rgba(4,8,14,0.97); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden; transition: border-color 0.2s; min-height: 0;
+}
+.ed-box:focus-within { border-color: rgba(0,255,170,0.2); }
+.ed-bar {
+  display: flex; align-items: center; gap: 7px;
+  padding: 8px 14px; border-bottom: 1px solid var(--border);
+  background: rgba(3,6,11,0.9); flex-shrink: 0;
+}
+.dots span { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 3px; }
+.ed-file { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted2); margin-left: 4px; }
+.ed-tag { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+.code-area {
+  flex: 1; width: 100%; background: transparent; border: none; outline: none;
+  resize: none; font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; line-height: 1.9; color: #6effc0;
+  padding: 14px 16px; overflow-y: auto; min-height: 0;
+}
+.code-area::placeholder { color: #1a3050; }
+
+.cfg-wrap { flex: 1; overflow-y: auto; min-height: 0; }
+.cfg-card { background: var(--panel2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px; }
+.cfg-header { margin-bottom: 14px; }
+.cfg-title { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: var(--white); }
+.cfg-sub { font-size: 12px; color: var(--muted2); margin-top: 4px; line-height: 1.5; }
+.cfg-divider { height: 1px; background: var(--border); margin: 14px 0; }
+.cfg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cfg-lbl { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.14em; display: block; margin-bottom: 5px; }
+.cfg-inp {
+  width: 100%; background: rgba(6,11,16,0.8); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 10px; font-family: 'DM Sans', sans-serif;
+  font-size: 13px; color: var(--text); outline: none; transition: border-color 0.2s;
+}
+.cfg-inp::placeholder { color: var(--muted); }
+.cfg-inp:focus { border-color: rgba(0,255,170,0.35); }
+.btn-apply {
+  margin-top: 14px; display: inline-flex; align-items: center; gap: 7px;
+  background: linear-gradient(135deg, var(--neon), var(--neon2)); color: #020d07;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px;
+  padding: 8px 18px; border-radius: 8px; border: none; cursor: pointer; transition: all 0.2s;
+}
+.btn-apply:hover { box-shadow: 0 6px 18px rgba(0,255,170,0.3); transform: translateY(-1px); }
+
+/* RIGHT PANEL */
+.rpanel {
+  grid-area: rpanel; overflow-y: auto;
+  padding: 14px 12px; display: flex; flex-direction: column; gap: 9px;
+  border-left: 1px solid var(--border); background: rgba(7,12,20,0.6); min-height: 0;
+}
+.rp-card { background: var(--panel2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 13px; transition: border-color 0.2s; }
+.rp-card:hover { border-color: rgba(0,255,170,0.12); }
+.rp-lbl { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 11px; display: block; }
+.inf-row { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; }
+.inf-ico { width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 13px; border: 1px solid rgba(0,255,170,0.15); background: rgba(0,255,170,0.07); color: var(--neon); flex-shrink: 0; }
+.inf-name { font-size: 11.5px; font-weight: 600; color: var(--white); line-height: 1.4; }
+.inf-cat { font-size: 10px; color: var(--neon); margin-top: 2px; }
+.prog-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+.prog-row span:first-child { font-size: 10px; color: var(--muted2); }
+.prog-row span:last-child { font-size: 10px; color: var(--neon); font-family: 'JetBrains Mono', monospace; }
+.prog-trk { height: 3px; background: rgba(0,255,170,0.06); border-radius: 3px; overflow: hidden; margin-bottom: 9px; }
+.prog-fill { height: 100%; background: linear-gradient(90deg, var(--neon), var(--neon2)); border-radius: 3px; width: 0%; transition: width 0.8s ease; }
+.mod-item { display: flex; align-items: flex-start; gap: 9px; padding: 8px 9px; border: 1px solid rgba(0,255,170,0.05); background: rgba(0,255,170,0.02); border-radius: 8px; margin-bottom: 5px; transition: all 0.15s; }
+.mod-item:hover { border-color: rgba(0,255,170,0.14); background: rgba(0,255,170,0.04); transform: translateX(2px); }
+.mod-item:last-child { margin-bottom: 0; }
+.mod-ic { color: var(--neon); font-size: 10px; margin-top: 2px; flex-shrink: 0; }
+.mod-t { font-size: 10.5px; font-weight: 600; color: var(--text2); }
+.mod-d { font-size: 9.5px; color: var(--muted2); margin-top: 2px; }
+.stk-wrap { display: flex; flex-wrap: wrap; gap: 5px; }
+.badge { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--neon); border: 1px solid rgba(0,255,170,0.2); background: rgba(0,255,170,0.04); border-radius: 5px; padding: 3px 8px; }
+.own-card { background: var(--panel2); border: 1px solid rgba(0,255,170,0.18); border-radius: var(--radius-lg); padding: 13px; }
+.s-ring { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; background: conic-gradient(var(--neon) 0deg 281deg, rgba(0,255,170,0.06) 281deg 360deg); display: flex; align-items: center; justify-content: center; }
+.s-inner { width: 30px; height: 30px; border-radius: 50%; background: var(--panel); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 12px; color: var(--neon); }
+.own-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; color: var(--white); }
+.own-role { font-size: 10px; color: var(--neon); margin-top: 2px; }
+.own-brand { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-align: right; margin-left: auto; }
+.own-brand-t { color: var(--muted2); }
+.own-brand-b { color: var(--neon); font-weight: 700; }
+
+/* TOAST */
+.toast {
+  position: fixed; bottom: 20px; right: 16px; z-index: 9999;
+  display: flex; align-items: center; gap: 9px;
+  padding: 10px 16px; border-radius: 10px;
+  backdrop-filter: blur(20px);
+  font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 600;
+  transform: translateY(90px); opacity: 0;
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events: none;
+  background: rgba(0,255,170,0.1); border: 1px solid rgba(0,255,170,0.3); color: var(--neon);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  max-width: calc(100vw - 32px);
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+
+.empty-state {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 12px;
+  color: var(--muted); border: 1px dashed var(--border); border-radius: var(--radius-lg);
+}
+.empty-state i { font-size: 26px; color: var(--border); }
+.empty-state p { font-size: 13px; }
+
+/* MOBILE */
+.mobile-nav {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+  height: var(--nav-h);
+  background: rgba(9,15,24,0.98);
+  border-top: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  flex-direction: row;
+  justify-content: space-around; align-items: center;
+}
+.mob-nav-btn {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 4px; padding: 6px 4px; cursor: pointer; border: none; background: transparent;
+  color: var(--muted2); transition: color 0.2s; position: relative;
+}
+.mob-nav-btn i { font-size: 16px; }
+.mob-nav-btn span { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.06em; text-transform: uppercase; }
+.mob-nav-btn.active { color: var(--neon); }
+.mob-nav-btn.active::after {
+  content: ''; position: absolute; bottom: 0; left: 20%; right: 20%;
+  height: 2px; background: var(--neon); border-radius: 2px 2px 0 0;
+  box-shadow: 0 0 8px var(--neon);
+}
+
+.mob-topbar {
+  display: none;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 99;
+  height: var(--top-h);
+  background: rgba(6,11,16,0.97);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  align-items: center;
+  padding: 0 14px;
+  gap: 10px;
+}
+.mob-topbar .logo-row { gap: 8px; }
+.mob-copy-btn {
+  margin-left: auto;
+  display: flex; align-items: center; gap: 5px;
+  background: linear-gradient(135deg, var(--neon), var(--neon2)); color: #020d07;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 10px;
+  padding: 7px 11px; border-radius: 7px; border: none; cursor: pointer;
+  white-space: nowrap;
+}
+.mob-logout-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
+  background: transparent; border: 1px solid var(--border); border-radius: 7px;
+  color: var(--muted2); cursor: pointer; transition: all 0.2s; flex-shrink: 0;
+}
+.mob-logout-btn:hover { border-color: rgba(255,80,80,0.3); color: #ff6b6b; }
+
+.mob-panes {
+  display: none;
+  position: fixed;
+  top: var(--top-h);
+  left: 0; right: 0;
+  bottom: var(--nav-h);
+  overflow: hidden;
+}
+.mob-pane {
+  position: absolute; inset: 0;
+  overflow-y: auto;
+  padding: 12px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+.mob-pane.active { display: flex; }
+.mob-tpl-list { display: flex; flex-direction: column; gap: 2px; }
+.mob-editor { display: flex; flex-direction: column; gap: 10px; height: 100%; }
+.mob-ed-box {
+  flex: 1; display: flex; flex-direction: column;
+  background: rgba(4,8,14,0.97); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden; min-height: 200px;
+}
+.mob-code-area {
+  flex: 1; width: 100%; background: transparent; border: none; outline: none;
+  resize: none; font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; line-height: 1.8; color: #6effc0;
+  padding: 12px 14px; min-height: 160px;
+  -webkit-overflow-scrolling: touch;
+}
+.mob-code-area::placeholder { color: #1a3050; }
+.mob-tabs { display: flex; gap: 4px; flex-shrink: 0; }
+.mob-tab {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 5px;
+  font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 8px 6px; border-radius: 8px; border: 1px solid transparent;
+  cursor: pointer; color: var(--muted2); background: transparent; transition: all 0.15s;
+}
+.mob-tab.active { color: var(--neon); background: rgba(0,255,170,0.07); border-color: rgba(0,255,170,0.22); }
+.mob-active-bar {
+  background: rgba(0,255,170,0.05); border: 1px solid rgba(0,255,170,0.15);
+  border-radius: var(--radius); padding: 10px 12px;
+  display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+}
+.mob-active-bar .inf-ico { width: 30px; height: 30px; border-radius: 7px; font-size: 11px; }
+.mob-active-name { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; color: var(--white); }
+.mob-active-cat { font-size: 10px; color: var(--neon); margin-top: 1px; }
+.mob-char-cnt { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); }
+.mob-cfg { display: flex; flex-direction: column; gap: 12px; }
+.mob-cfg .cfg-card { background: var(--panel2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px; }
+.mob-cfg .cfg-grid { grid-template-columns: 1fr; }
+.mob-panel { display: flex; flex-direction: column; gap: 10px; }
+
+@media (max-width: 767px) {
+  html, body { overflow: hidden; }
+  .app { display: none; }
+  .mobile-nav { display: flex; }
+  .mob-topbar { display: flex; }
+  .mob-panes { display: block; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root { --sb-w: 220px; --rp-w: 230px; }
+  .btn-copy span.btn-txt { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="orb" style="width:500px;height:500px;background:#00ffaa;top:-220px;left:-180px;opacity:0.06;"></div>
+<div class="orb" style="width:360px;height:360px;background:#0055ff;bottom:-100px;right:25%;opacity:0.05;"></div>
+
+<!-- LOGIN -->
+<div id="loginOverlay">
+  <div class="login-card">
+    <div class="login-logo">
+      <svg width="44" height="44" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 12px rgba(0,255,170,0.6));flex-shrink:0;">
+        <defs>
+          <linearGradient id="lg1" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#00ffaa"/><stop offset="100%" stop-color="#0066ff"/>
+          </linearGradient>
+          <linearGradient id="lg2" x1="100" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#00ffaa" stop-opacity="0.7"/><stop offset="100%" stop-color="#003380"/>
+          </linearGradient>
+        </defs>
+        <path d="M10 15 L42 50 L10 85 L24 85 L50 53 L76 85 L90 85 L58 50 L90 15 L76 15 L50 47 L24 15 Z" fill="url(#lg1)"/>
+        <rect x="44" y="5" width="12" height="22" rx="2" fill="url(#lg2)" opacity="0.9"/>
+        <rect x="36" y="14" width="8" height="13" rx="1.5" fill="#00ffaa" opacity="0.6"/>
+        <rect x="56" y="14" width="8" height="13" rx="1.5" fill="#00ffaa" opacity="0.6"/>
+      </svg>
+      <div class="login-logo-text">
+        <div class="brand">XTACK <span>PRO</span></div>
+        <div class="sub">Enterprise v5.0 · Área Restrita</div>
+      </div>
+    </div>
+    <div class="login-heading">
+      <h2>Acesso Privado</h2>
+      <p>Introduza a sua senha para continuar.</p>
+    </div>
+    <div class="login-divider"></div>
+    <div class="login-field">
+      <label>Senha de Acesso</label>
+      <div class="input-wrap">
+        <i class="fas fa-lock">🔒</i>
+        <input type="password" id="loginInput" class="login-input" placeholder="••••••••" autocomplete="current-password">
+      </div>
+    </div>
+    <div class="login-error" id="loginError">
+      <i class="fas fa-circle-xmark">✕</i>
+      <span>Senha incorreta. Tente novamente.</span>
+    </div>
+    <button class="btn-login" onclick="doLogin()">
+      <i class="fas fa-unlock-alt">🔓</i> ENTRAR NO SISTEMA
+    </button>
+    <div class="login-footer">Acesso exclusivo · <span>XTACK OFICIAL</span></div>
+  </div>
+</div>
+
+<!-- DESKTOP APP -->
+<div class="app">
+  <aside class="sidebar">
+    <div class="sb-logo">
+      <div class="logo-row">
+        <svg width="34" height="34" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;filter:drop-shadow(0 0 6px rgba(0,255,170,0.45));">
+          <defs>
+            <linearGradient id="slg1" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#00ffaa"/><stop offset="100%" stop-color="#0066ff"/>
+            </linearGradient>
+          </defs>
+          <path d="M10 15 L42 50 L10 85 L24 85 L50 53 L76 85 L90 85 L58 50 L90 15 L76 15 L50 47 L24 15 Z" fill="url(#slg1)"/>
+          <rect x="44" y="5" width="12" height="20" rx="2" fill="#00ffaa" opacity="0.85"/>
+          <rect x="37" y="14" width="7" height="11" rx="1.5" fill="#00ffaa" opacity="0.5"/>
+          <rect x="56" y="14" width="7" height="11" rx="1.5" fill="#00ffaa" opacity="0.5"/>
+        </svg>
+        <div>
+          <div class="logo-title">XTACK <span>PRO</span></div>
+          <div class="logo-sub">Enterprise v5.0</div>
+        </div>
+      </div>
+    </div>
+    <div class="sb-section-header">
+      <div class="sb-section-label">
+        <span>Templates</span>
+        <span class="cnt-pill" id="countBadge">40 / 40</span>
+      </div>
+    </div>
+    <div class="sb-search">
+      <div class="s-wrap">
+        <i class="fas fa-magnifying-glass">🔍</i>
+        <input type="text" id="searchInput" class="s-inp" placeholder="Pesquisar template...">
+      </div>
+    </div>
+    <div class="tpl-list" id="templateList"></div>
+    <div class="sb-foot">
+      <div class="avatar">X</div>
+      <div>
+        <div class="foot-name">XTACK</div>
+        <div class="foot-role">Administrador</div>
+      </div>
+      <div class="online-dot"></div>
+    </div>
+  </aside>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="tb-left">
+      <div class="tb-titles">
+        <div class="tb-sub">Dashboard de Produção</div>
+        <div class="tb-title" id="activeTitle">Selecione um Template</div>
+      </div>
+      <span class="ver-pill">v5.0 STABLE</span>
+    </div>
+    <div class="tb-right">
+      <button class="btn-logout" onclick="doLogout()"><i class="fas fa-right-from-bracket">⏏</i> Sair</button>
+      <button class="btn-copy" onclick="copyPrompt()"><i class="fas fa-copy">⎘</i> <span class="btn-txt">Copiar Prompt</span></button>
+    </div>
+  </header>
+
+  <!-- EDITOR -->
+  <main class="editor">
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('prompt',this)"><i class="fas fa-terminal">⌨</i> Prompt Mestre</button>
+      <button class="tab" onclick="switchTab('config',this)"><i class="fas fa-sliders">⚙</i> Configurar</button>
+      <span class="char-cnt" id="charCount">0 chars</span>
+    </div>
+
+    <div id="tabPrompt" style="flex:1;display:flex;flex-direction:column;min-height:0;">
+      <div class="ed-box">
+        <div class="ed-bar">
+          <div class="dots">
+            <span style="background:#ff5f57;"></span>
+            <span style="background:#ffbd2e;"></span>
+            <span style="background:#28ca41;"></span>
+          </div>
+          <span class="ed-file">prompt.xtack.js</span>
+          <span class="ed-tag" id="promptTag">— —</span>
+        </div>
+        <textarea id="mainPrompt" class="code-area" readonly spellcheck="false"
+          placeholder="// Selecione um template na sidebar&#10;// para gerar o prompt completo...&#10;//&#10;// XTACK Enterprise v5.0 🇲🇿"></textarea>
+      </div>
+    </div>
+
+    <div id="tabConfig" class="cfg-wrap" style="display:none;">
+      <div class="cfg-card">
+        <div class="cfg-header">
+          <div class="cfg-title">Configurações Globais</div>
+          <div class="cfg-sub">Estes dados são injetados automaticamente em todos os prompts gerados.</div>
+        </div>
+        <div class="cfg-divider"></div>
+        <div class="cfg-grid">
+          <div><label class="cfg-lbl">Nome do Proprietário</label><input type="text" id="cfg-owner" value="XTACK" class="cfg-inp"></div>
+          <div><label class="cfg-lbl">Nome da Empresa</label><input type="text" id="cfg-company" placeholder="Ex: XTACK Digital" class="cfg-inp"></div>
+          <div><label class="cfg-lbl">WhatsApp</label><input type="text" id="cfg-whatsapp" value="+258 84 000 0000" class="cfg-inp"></div>
+          <div><label class="cfg-lbl">Localização</label><input type="text" id="cfg-location" value="Maputo, Moçambique" class="cfg-inp"></div>
+          <div><label class="cfg-lbl">Email</label><input type="text" id="cfg-email" placeholder="contacto@empresa.co.mz" class="cfg-inp"></div>
+          <div><label class="cfg-lbl">Cor Principal</label><input type="text" id="cfg-color" value="#00ffaa" class="cfg-inp"></div>
+        </div>
+        <div style="grid-column:1/-1;margin-top:10px;">
+          <label class="cfg-lbl">Observações Extras</label>
+          <textarea id="cfg-notes" rows="3" class="cfg-inp" style="resize:vertical;" placeholder="Ex: Aceita M-Pesa, site em Português, público jovem..."></textarea>
+        </div>
+        <button class="btn-apply" onclick="applyConfig()"><i class="fas fa-check">✓</i> APLICAR E REGENERAR</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- RIGHT PANEL -->
+  <aside class="rpanel">
+    <div class="rp-card">
+      <span class="rp-lbl">Template Ativo</span>
+      <div class="inf-row">
+        <div class="inf-ico" id="infoIcon"><i class="fas fa-layer-group">⊞</i></div>
+        <div><div class="inf-name" id="infoName">Nenhum selecionado</div><div class="inf-cat" id="infoCat">— Categoria —</div></div>
+      </div>
+      <div class="prog-row"><span>Complexidade</span><span id="v1">—</span></div>
+      <div class="prog-trk"><div class="prog-fill" id="p1"></div></div>
+      <div class="prog-row"><span>Mercado Africano</span><span id="v2">—</span></div>
+      <div class="prog-trk"><div class="prog-fill" id="p2"></div></div>
+      <div class="prog-row"><span>Score Moçambique</span><span id="v3">—</span></div>
+      <div class="prog-trk" style="margin-bottom:0;"><div class="prog-fill" id="p3"></div></div>
+    </div>
+    <div class="rp-card">
+      <span class="rp-lbl">Módulos Incluídos</span>
+      <div class="mod-item"><i class="fab fa-whatsapp mod-ic">W</i><div><div class="mod-t">Chat WhatsApp Flutuante</div><div class="mod-d">Botão fixo com mensagem pré-definida</div></div></div>
+      <div class="mod-item"><i class="fas fa-map-location-dot mod-ic">📍</i><div><div class="mod-t">Mapa Leaflet.js 1.9</div><div class="mod-d">Localização dinâmica com marcador</div></div></div>
+      <div class="mod-item"><i class="fas fa-keyboard mod-ic">⌨</i><div><div class="mod-t">Typewriter Hero Effect</div><div class="mod-d">Frases rotativas de alto impacto</div></div></div>
+      <div class="mod-item"><i class="fas fa-mobile-screen mod-ic">📱</i><div><div class="mod-t">100% Responsivo + PWA</div><div class="mod-d">Mobile-first, instalável no Android</div></div></div>
+      <div class="mod-item"><i class="fas fa-credit-card mod-ic">💳</i><div><div class="mod-t">Pagamentos Locais MZ</div><div class="mod-d">M-Pesa, e-Mola, mkesh integrados</div></div></div>
+      <div class="mod-item"><i class="fas fa-database mod-ic">🗄</i><div><div class="mod-t">JSON DATABASE</div><div class="mod-d">Conteúdo editável via objeto JS</div></div></div>
+    </div>
+    <div class="rp-card">
+      <span class="rp-lbl">Stack Técnica 2025</span>
+      <div class="stk-wrap">
+        <span class="badge">SPA Nav</span><span class="badge">AOS 3.0</span>
+        <span class="badge">Leaflet 1.9</span><span class="badge">FA 6.5</span>
+        <span class="badge">Google Fonts</span><span class="badge">HTML5</span>
+        <span class="badge">ES6+</span><span class="badge">PWA</span>
+        <span class="badge">CSS Variables</span><span class="badge">Glassmorphism</span>
+      </div>
+    </div>
+    <div class="own-card">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="s-ring"><div class="s-inner">X</div></div>
+        <div><div class="own-name">XTACK</div><div class="own-role">Full Access Admin</div></div>
+        <div class="own-brand" style="margin-left:auto;"><div class="own-brand-t">XTACK</div><div class="own-brand-b">OFICIAL</div></div>
+      </div>
+    </div>
+    <div style="text-align:center;padding:8px 0 4px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:0.12em;">XTACK OFICIAL — Moçambique Digital First 🇲🇿</span>
+    </div>
+  </aside>
+</div>
+
+<!-- MOBILE TOP BAR -->
+<header class="mob-topbar" id="mobTopbar">
+  <div class="logo-row">
+    <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;filter:drop-shadow(0 0 5px rgba(0,255,170,0.5));">
+      <defs><linearGradient id="mlg1" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#00ffaa"/><stop offset="100%" stop-color="#0066ff"/></linearGradient></defs>
+      <path d="M10 15 L42 50 L10 85 L24 85 L50 53 L76 85 L90 85 L58 50 L90 15 L76 15 L50 47 L24 15 Z" fill="url(#mlg1)"/>
+      <rect x="44" y="5" width="12" height="18" rx="2" fill="#00ffaa" opacity="0.85"/>
+    </svg>
+    <div style="line-height:1.2;">
+      <div class="logo-title" style="font-size:12px;">XTACK <span>PRO</span></div>
+      <div class="logo-sub" style="font-size:8px;">v5.0</div>
+    </div>
+  </div>
+  <button class="mob-copy-btn" onclick="copyPrompt()"><i class="fas fa-copy">⎘</i> Copiar</button>
+  <button class="mob-logout-btn" onclick="doLogout()" title="Sair"><i class="fas fa-right-from-bracket" style="font-size:13px;">⏏</i></button>
+</header>
+
+<!-- MOBILE PANES -->
+<div class="mob-panes" id="mobPanes">
+
+  <!-- PANE 1: Templates -->
+  <div class="mob-pane active" id="pane-templates">
+    <div class="sb-section-header" style="padding:4px 4px 8px;">
+      <div class="sb-section-label">
+        <span>Templates</span>
+        <span class="cnt-pill" id="mobCountBadge">40 / 40</span>
+      </div>
+    </div>
+    <div class="sb-search" style="padding:0 0 6px;">
+      <div class="s-wrap">
+        <i class="fas fa-magnifying-glass">🔍</i>
+        <input type="text" id="mobSearchInput" class="s-inp" placeholder="Pesquisar template...">
+      </div>
+    </div>
+    <div class="mob-tpl-list" id="mobTemplateList"></div>
+  </div>
+
+  <!-- PANE 2: Prompt / Config -->
+  <div class="mob-pane" id="pane-editor">
+    <div class="mob-editor">
+      <div class="mob-active-bar" id="mobActiveBar">
+        <div class="inf-ico" id="mobInfoIcon"><i class="fas fa-layer-group">⊞</i></div>
+        <div>
+          <div class="mob-active-name" id="mobActiveName">Nenhum selecionado</div>
+          <div class="mob-active-cat" id="mobActiveCat">Escolha um template</div>
+        </div>
+        <div class="mob-char-cnt" id="mobCharCount">0</div>
+      </div>
+      <div class="mob-tabs">
+        <button class="mob-tab active" onclick="switchMobTab('prompt',this)"><i class="fas fa-terminal">⌨</i> Prompt</button>
+        <button class="mob-tab" onclick="switchMobTab('config',this)"><i class="fas fa-sliders">⚙</i> Config</button>
+      </div>
+      <div id="mobTabPrompt" style="flex:1;display:flex;flex-direction:column;min-height:0;">
+        <div class="mob-ed-box">
+          <div class="ed-bar">
+            <div class="dots">
+              <span style="background:#ff5f57;"></span><span style="background:#ffbd2e;"></span><span style="background:#28ca41;"></span>
+            </div>
+            <span class="ed-file">prompt.xtack.js</span>
+            <span class="ed-tag" id="mobPromptTag" style="max-width:100px;">— —</span>
+          </div>
+          <textarea id="mobMainPrompt" class="mob-code-area" readonly spellcheck="false"
+            placeholder="// Selecione um template&#10;// para gerar o prompt..."></textarea>
+        </div>
+      </div>
+      <div id="mobTabConfig" class="mob-cfg" style="display:none;">
+        <div class="cfg-card">
+          <div class="cfg-title" style="margin-bottom:4px;">Configurações Globais</div>
+          <div class="cfg-sub" style="margin-bottom:14px;">Dados injetados em todos os prompts.</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div><label class="cfg-lbl">Nome do Proprietário</label><input type="text" id="mob-cfg-owner" value="XTACK" class="cfg-inp"></div>
+            <div><label class="cfg-lbl">Nome da Empresa</label><input type="text" id="mob-cfg-company" placeholder="Ex: XTACK Digital" class="cfg-inp"></div>
+            <div><label class="cfg-lbl">WhatsApp</label><input type="text" id="mob-cfg-whatsapp" value="+258 84 000 0000" class="cfg-inp"></div>
+            <div><label class="cfg-lbl">Localização</label><input type="text" id="mob-cfg-location" value="Maputo, Moçambique" class="cfg-inp"></div>
+            <div><label class="cfg-lbl">Email</label><input type="text" id="mob-cfg-email" placeholder="contacto@empresa.co.mz" class="cfg-inp"></div>
+            <div><label class="cfg-lbl">Cor Principal</label><input type="text" id="mob-cfg-color" value="#00ffaa" class="cfg-inp"></div>
+            <div><label class="cfg-lbl">Observações Extras</label><textarea id="mob-cfg-notes" rows="3" class="cfg-inp" style="resize:none;" placeholder="Ex: M-Pesa, Português..."></textarea></div>
+            <button class="btn-apply" style="width:100%;justify-content:center;" onclick="applyMobConfig()"><i class="fas fa-check">✓</i> APLICAR E REGENERAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANE 3: Info -->
+  <div class="mob-pane" id="pane-panel">
+    <div class="mob-panel">
+      <div class="rp-card">
+        <span class="rp-lbl">Template Ativo</span>
+        <div class="inf-row">
+          <div class="inf-ico" id="mobPanelIcon"><i class="fas fa-layer-group">⊞</i></div>
+          <div><div class="inf-name" id="mobPanelName">Nenhum selecionado</div><div class="inf-cat" id="mobPanelCat">— Categoria —</div></div>
+        </div>
+        <div class="prog-row"><span>Complexidade</span><span id="mv1">—</span></div>
+        <div class="prog-trk"><div class="prog-fill" id="mp1"></div></div>
+        <div class="prog-row"><span>Mercado Africano</span><span id="mv2">—</span></div>
+        <div class="prog-trk"><div class="prog-fill" id="mp2"></div></div>
+        <div class="prog-row"><span>Score Moçambique</span><span id="mv3">—</span></div>
+        <div class="prog-trk" style="margin-bottom:0;"><div class="prog-fill" id="mp3"></div></div>
+      </div>
+      <div class="rp-card">
+        <span class="rp-lbl">Módulos Incluídos</span>
+        <div class="mod-item"><i class="fab fa-whatsapp mod-ic">W</i><div><div class="mod-t">Chat WhatsApp Flutuante</div><div class="mod-d">Botão fixo com mensagem pré-definida</div></div></div>
+        <div class="mod-item"><i class="fas fa-map-location-dot mod-ic">📍</i><div><div class="mod-t">Mapa Leaflet.js 1.9</div><div class="mod-d">Localização dinâmica com marcador</div></div></div>
+        <div class="mod-item"><i class="fas fa-keyboard mod-ic">⌨</i><div><div class="mod-t">Typewriter Hero Effect</div><div class="mod-d">Frases rotativas de alto impacto</div></div></div>
+        <div class="mod-item"><i class="fas fa-mobile-screen mod-ic">📱</i><div><div class="mod-t">100% Responsivo + PWA</div><div class="mod-d">Mobile-first, instalável no Android</div></div></div>
+        <div class="mod-item"><i class="fas fa-credit-card mod-ic">💳</i><div><div class="mod-t">Pagamentos Locais</div><div class="mod-d">M-Pesa, e-Mola, mkesh integrados</div></div></div>
+        <div class="mod-item"><i class="fas fa-database mod-ic">🗄</i><div><div class="mod-t">JSON DATABASE</div><div class="mod-d">Conteúdo editável via objeto JS</div></div></div>
+      </div>
+      <div class="rp-card">
+        <span class="rp-lbl">Stack Técnica 2025</span>
+        <div class="stk-wrap">
+          <span class="badge">SPA Nav</span><span class="badge">AOS 3.0</span>
+          <span class="badge">Leaflet 1.9</span><span class="badge">FA 6.5</span>
+          <span class="badge">Google Fonts</span><span class="badge">HTML5</span>
+          <span class="badge">ES6+</span><span class="badge">PWA</span>
+        </div>
+      </div>
+      <div class="own-card">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="s-ring"><div class="s-inner">X</div></div>
+          <div><div class="own-name">XTACK</div><div class="own-role">Full Access Admin</div></div>
+          <div class="own-brand" style="margin-left:auto;"><div class="own-brand-t">XTACK</div><div class="own-brand-b">OFICIAL</div></div>
+        </div>
+      </div>
+      <div style="text-align:center;padding:8px 0 4px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:0.12em;">XTACK OFICIAL — Moçambique Digital First 🇲🇿</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE NAV -->
+<nav class="mobile-nav" id="mobileNav">
+  <button class="mob-nav-btn active" id="navTemplates" onclick="switchPane('templates')">
+    <i class="fas fa-layer-group">⊞</i><span>Templates</span>
+  </button>
+  <button class="mob-nav-btn" id="navEditor" onclick="switchPane('editor')">
+    <i class="fas fa-terminal">⌨</i><span>Prompt</span>
+  </button>
+  <button class="mob-nav-btn" id="navPanel" onclick="switchPane('panel')">
+    <i class="fas fa-chart-bar">▦</i><span>Info</span>
+  </button>
+</nav>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <i id="toastIcon" class="fas fa-check-circle">✓</i>
+  <span id="toastMsg">Ação realizada</span>
+</div>
+
+<script>
+/* ─── LOGIN ─── */
+var SENHA = 'xxxtack';
+
+function doLogin() {
+  var val = document.getElementById('loginInput').value;
+  var err = document.getElementById('loginError');
+  if (val === SENHA) {
+    err.classList.remove('show');
+    document.getElementById('loginOverlay').classList.add('hidden');
+  } else {
+    err.classList.add('show');
+    document.getElementById('loginInput').value = '';
+    document.getElementById('loginInput').focus();
+  }
+}
+function doLogout() {
+  document.getElementById('loginOverlay').classList.remove('hidden');
+  document.getElementById('loginInput').value = '';
+  document.getElementById('loginError').classList.remove('show');
+}
+document.getElementById('loginInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') doLogin();
+});
+
+/* ─── TEMPLATES ─── */
+var TEMPLATES = [
+  /* ALIMENTAÇÃO */
+  {id:1,  name:"Restaurante Gourmet & Bar",       icon:"utensils",             category:"Alimentação",    c:72, m:88, mz:90, style:"elegante"},
+  {id:2,  name:"Delivery de Comida Local",         icon:"bowl-food",            category:"Alimentação",    c:85, m:91, mz:95, style:"vibrante"},
+  {id:3,  name:"Supermercado Digital",             icon:"cart-shopping",        category:"Alimentação",    c:86, m:90, mz:92, style:"moderno"},
+  {id:4,  name:"Café & Pastelaria Premium",        icon:"wine-glass",           category:"Alimentação",    c:65, m:80, mz:85, style:"aconchegante"},
+  /* VENDAS & COMÉRCIO */
+  {id:5,  name:"E-commerce de Tecnologia",         icon:"mobile-screen",        category:"Vendas",         c:88, m:85, mz:78, style:"tech"},
+  {id:6,  name:"Loja de Moda Africana",            icon:"shirt",                category:"Moda",           c:72, m:85, mz:93, style:"editorial"},
+  {id:7,  name:"Marketplace de Artesanato",        icon:"palette",              category:"Arte & Cultura", c:76, m:78, mz:94, style:"artistico"},
+  {id:8,  name:"Pet Shop & Veterinária",           icon:"paw",                  category:"Pets",           c:64, m:77, mz:81, style:"amigavel"},
+  /* SERVIÇOS */
+  {id:9,  name:"Agência Digital XTACK",            icon:"rocket",               category:"Marketing",      c:90, m:88, mz:87, style:"futurista"},
+  {id:10, name:"Escritório de Advocacia",          icon:"scale-balanced",       category:"Jurídico",       c:65, m:75, mz:80, style:"premium"},
+  {id:11, name:"Oficina Mecânica Digital",         icon:"gears",                category:"Serviços",       c:70, m:83, mz:88, style:"industrial"},
+  {id:12, name:"Agência Fotográfica",              icon:"camera",               category:"Criativo",       c:68, m:74, mz:80, style:"minimalista"},
+  {id:13, name:"Empresa de Segurança",             icon:"shield-halved",        category:"Segurança",      c:74, m:80, mz:85, style:"robusto"},
+  {id:14, name:"Transportes & Logística",          icon:"truck-fast",           category:"Logística",      c:79, m:83, mz:85, style:"corporativo"},
+  {id:15, name:"Salão de Beleza Premium",          icon:"scissors",             category:"Bem-estar",      c:62, m:80, mz:87, style:"luxuoso"},
+  {id:16, name:"Spa & Centro de Bem-Estar",        icon:"spa",                  category:"Bem-estar",      c:66, m:79, mz:86, style:"sereno"},
+  /* SAÚDE */
+  {id:17, name:"Clínica Médica Privada",           icon:"stethoscope",          category:"Saúde",          c:70, m:90, mz:92, style:"profissional"},
+  {id:18, name:"Farmácia Online",                  icon:"pills",                category:"Saúde",          c:80, m:89, mz:91, style:"clean"},
+  {id:19, name:"Ginásio & Fitness Center",         icon:"dumbbell",             category:"Bem-estar",      c:68, m:78, mz:82, style:"energetico"},
+  /* IMÓVEIS & CONSTRUÇÃO */
+  {id:20, name:"Imobiliária de Luxo",              icon:"house-chimney-window", category:"Imóveis",        c:75, m:80, mz:85, style:"premium"},
+  {id:21, name:"Construtora & Engenharia",         icon:"hard-hat",             category:"Construção",     c:73, m:84, mz:86, style:"solido"},
+  /* EDUCAÇÃO */
+  {id:22, name:"Escola de Programação",            icon:"code",                 category:"Educação",       c:82, m:86, mz:89, style:"tech"},
+  {id:23, name:"Plataforma de Cursos Online",      icon:"graduation-cap",       category:"Edtech",         c:91, m:92, mz:88, style:"dinamico"},
+  {id:24, name:"Escola de Inglês & Idiomas",       icon:"language",             category:"Educação",       c:65, m:88, mz:90, style:"internacional"},
+  {id:25, name:"Academia de Música",               icon:"music",                category:"Arte",           c:66, m:72, mz:83, style:"criativo"},
+  /* TURISMO & HOTELARIA */
+  {id:26, name:"Agência de Viagens Premium",       icon:"plane-departure",      category:"Turismo",        c:74, m:76, mz:84, style:"aventureiro"},
+  {id:27, name:"Hotel Boutique & Resort",          icon:"hotel",                category:"Hotelaria",      c:78, m:82, mz:88, style:"luxuoso"},
+  /* FINANÇAS & TECNOLOGIA */
+  {id:28, name:"Consultoria Financeira",           icon:"chart-line",           category:"Finanças",       c:78, m:82, mz:79, style:"corporativo"},
+  {id:29, name:"Startup de Fintech Africana",      icon:"coins",                category:"Fintech",        c:94, m:90, mz:88, style:"futurista"},
+  {id:30, name:"SaaS B2B Moçambique",              icon:"server",               category:"Tecnologia",     c:95, m:88, mz:82, style:"tech"},
+  /* MEDIA & SOCIAL */
+  {id:31, name:"Portal de Empregos Nacional",      icon:"briefcase",            category:"Recrutamento",   c:80, m:92, mz:95, style:"profissional"},
+  {id:32, name:"Jornal & Portal de Notícias",      icon:"newspaper",            category:"Media",          c:83, m:85, mz:91, style:"editorial"},
+  {id:33, name:"ONG & Impacto Social",             icon:"hand-holding-heart",   category:"Social",         c:60, m:70, mz:96, style:"humano"},
+  /* ENERGIA & SUSTENTABILIDADE */
+  {id:34, name:"Empresa de Energia Solar",         icon:"solar-panel",          category:"Energia",        c:77, m:86, mz:89, style:"verde"},
+  {id:35, name:"Agronegócio & Agricultura",        icon:"leaf",                 category:"Agricultura",    c:71, m:88, mz:93, style:"natural"},
+  /* PESCA & RECURSOS */
+  {id:36, name:"Empresa de Pesca & Frutos do Mar", icon:"fish",                 category:"Alimentação",    c:68, m:82, mz:90, style:"maritimo"},
+  /* GOVERNO & INSTITUCIONAL */
+  {id:37, name:"Câmara Municipal & Gov Local",     icon:"landmark",             category:"Governo",        c:74, m:78, mz:92, style:"institucional"},
+  /* TRANSPORTE PÚBLICO */
+  {id:38, name:"Cooperativa de Transportes",       icon:"bus",                  category:"Transporte",     c:70, m:85, mz:91, style:"comunitario"},
+  /* TECNOLOGIA AVANÇADA */
+  {id:39, name:"Startup de IA & Automação",        icon:"bolt",                 category:"Tecnologia",     c:97, m:89, mz:84, style:"futurista"},
+  {id:40, name:"Marketplace B2B Industrial",       icon:"gears",                category:"Indústria",      c:85, m:83, mz:80, style:"robusto"}
+];
+
+var active = null;
+function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+/* ─── MOBILE PANE ─── */
+function switchPane(name) {
+  var panes = ['templates','editor','panel'];
+  panes.forEach(function(p) {
+    document.getElementById('pane-' + p).classList.remove('active');
+    document.getElementById('nav' + p.charAt(0).toUpperCase() + p.slice(1)).classList.remove('active');
+  });
+  document.getElementById('pane-' + name).classList.add('active');
+  document.getElementById('nav' + name.charAt(0).toUpperCase() + name.slice(1)).classList.add('active');
+}
+
+/* ─── BUILD LIST ─── */
+function buildList(filter) {
+  filter = (filter || '').toLowerCase();
+  var list = document.getElementById('templateList');
+  var mobList = document.getElementById('mobTemplateList');
+  var badge = document.getElementById('countBadge');
+  var mobBadge = document.getElementById('mobCountBadge');
+  list.innerHTML = '';
+  mobList.innerHTML = '';
+  var shown = 0;
+  for (var i = 0; i < TEMPLATES.length; i++) {
+    var t = TEMPLATES[i];
+    if (filter && t.name.toLowerCase().indexOf(filter) === -1 && t.category.toLowerCase().indexOf(filter) === -1) continue;
+    shown++;
+    (function(tmpl) {
+      function makeItem() {
+        var el = document.createElement('div');
+        el.className = 't-item' + (active && active.id === tmpl.id ? ' active' : '');
+        el.innerHTML =
+          '<div class="t-ico"><i class="fas fa-' + tmpl.icon + '"></i></div>' +
+          '<div class="t-info">' +
+            '<div class="t-name">' + tmpl.name + '</div>' +
+            '<div class="t-cat">' + tmpl.category + '</div>' +
+          '</div>' +
+          '<span class="t-num">#' + pad(tmpl.id) + '</span>';
+        return el;
+      }
+      var d = makeItem();
+      d.addEventListener('click', function() { selectTemplate(tmpl); });
+      list.appendChild(d);
+      var m = makeItem();
+      m.addEventListener('click', function() { selectTemplate(tmpl); switchPane('editor'); });
+      mobList.appendChild(m);
+    })(t);
+  }
+  badge.textContent = shown + ' / ' + TEMPLATES.length;
+  mobBadge.textContent = shown + ' / ' + TEMPLATES.length;
+}
+
+document.getElementById('searchInput').addEventListener('input', function() { buildList(this.value); });
+document.getElementById('mobSearchInput').addEventListener('input', function() { buildList(this.value); });
+
+/* ─── SELECT TEMPLATE ─── */
+function selectTemplate(t) {
+  active = t;
+  buildList(document.getElementById('searchInput').value || document.getElementById('mobSearchInput').value);
+  document.getElementById('activeTitle').textContent = t.name;
+  document.getElementById('infoIcon').innerHTML = '<i class="fas fa-' + t.icon + '"></i>';
+  document.getElementById('infoName').textContent = t.name;
+  document.getElementById('infoCat').textContent = t.category;
+  setTimeout(function() {
+    setBar('p1','v1',t.c); setBar('p2','v2',t.m); setBar('p3','v3',t.mz);
+    setBar('mp1','mv1',t.c); setBar('mp2','mv2',t.m); setBar('mp3','mv3',t.mz);
+  }, 60);
+  var txt = buildPrompt(t);
+  document.getElementById('mainPrompt').value = txt;
+  document.getElementById('charCount').textContent = txt.length.toLocaleString() + ' chars';
+  document.getElementById('promptTag').textContent = t.name;
+  document.getElementById('mobInfoIcon').innerHTML = '<i class="fas fa-' + t.icon + '"></i>';
+  document.getElementById('mobActiveName').textContent = t.name;
+  document.getElementById('mobActiveCat').textContent = t.category;
+  document.getElementById('mobMainPrompt').value = txt;
+  document.getElementById('mobCharCount').textContent = txt.length.toLocaleString();
+  document.getElementById('mobPromptTag').textContent = t.name;
+  document.getElementById('mobPanelIcon').innerHTML = '<i class="fas fa-' + t.icon + '"></i>';
+  document.getElementById('mobPanelName').textContent = t.name;
+  document.getElementById('mobPanelCat').textContent = t.category;
+}
+
+function setBar(bId, vId, val) {
+  var b = document.getElementById(bId);
+  var v = document.getElementById(vId);
+  if (b) b.style.width = val + '%';
+  if (v) v.textContent = val + '%';
+}
+
+/* ─── HELPERS ─── */
+function getField(desktopId, mobId) {
+  var d = document.getElementById(desktopId);
+  var m = document.getElementById(mobId);
+  return (d && d.value) || (m && m.value) || '';
+}
+
+/* ─── BUILD PROMPT v5 — NAVIGATION SPA COMO OS EXEMPLOS ─── */
+function buildPrompt(t) {
+  var owner    = getField('cfg-owner','mob-cfg-owner')       || 'XTACK';
+  var company  = getField('cfg-company','mob-cfg-company')   || '[Nome da Empresa]';
+  var whatsapp = getField('cfg-whatsapp','mob-cfg-whatsapp') || '+258 84 000 0000';
+  var location = getField('cfg-location','mob-cfg-location') || 'Maputo, Moçambique';
+  var email    = getField('cfg-email','mob-cfg-email')       || 'contacto@empresa.co.mz';
+  var color    = getField('cfg-color','mob-cfg-color')       || '#00ffaa';
+  var notes    = getField('cfg-notes','mob-cfg-notes')       || '';
+  var yr       = new Date().getFullYear();
+  var date     = new Date().toLocaleDateString('pt-PT', {day:'2-digit',month:'long',year:'numeric'});
+  var wnum     = whatsapp.replace(/\D/g,'');
+
+  /* Estilos visuais por template */
+  var styleMap = {
+    elegante:      { tema:'dark luxury com dourado e cream', fonte1:'Playfair Display', fonte2:'Raleway', bg:'#0a0a08', ac:'cor do cliente', estilo:'glassmorphism sofisticado, bordas douradas, animações suaves' },
+    vibrante:      { tema:'energético com gradientes quentes', fonte1:'Bebas Neue', fonte2:'Nunito', bg:'#0d0d0d', ac:'cor do cliente + laranja #FF6B35', estilo:'cards bold, tipografia impactante, micro-interações rápidas' },
+    moderno:       { tema:'clean tech bicolor', fonte1:'Space Grotesk', fonte2:'Inter', bg:'#050810', ac:'cor do cliente', estilo:'grid assimétrico, bordas neon, badge de produto animado' },
+    aconchegante:  { tema:'warm & cozy com tons terra', fonte1:'Pacifico', fonte2:'Lato', bg:'#1a0f05', ac:'cor do cliente + creme #F5E6C8', estilo:'ondas SVG decorativas, cantos arredondados, feel artesanal' },
+    tech:          { tema:'dark tech matrix', fonte1:'Orbitron', fonte2:'JetBrains Mono', bg:'#030509', ac:'cor do cliente', estilo:'linhas de scan, grid hexagonal, glitch effect nos títulos' },
+    editorial:     { tema:'editorial fashion magazine', fonte1:'Cormorant Garamond', fonte2:'Montserrat', bg:'#0a0a0a', ac:'cor do cliente', estilo:'layout assimétrico, grandes blocos de texto, fotografias em full bleed' },
+    artistico:     { tema:'colorido artístico & cultural', fonte1:'Abril Fatface', fonte2:'Nunito', bg:'#0e0814', ac:'cor do cliente + roxo #8B5CF6', estilo:'texturas de papel, formas geométricas irregulares, efeito aquarela' },
+    amigavel:      { tema:'fresh & friendly', fonte1:'Poppins', fonte2:'Open Sans', bg:'#050d0a', ac:'cor do cliente', estilo:'cards com cantos arredondados, ícones animados, paleta bright' },
+    futurista:     { tema:'cyberpunk neon dark', fonte1:'Syne', fonte2:'DM Sans', bg:'#030308', ac:'cor do cliente + cyan #00D4FF', estilo:'partículas canvas, glitch hover, linhas de luz, orbs animados' },
+    premium:       { tema:'luxury minimal preto e dourado', fonte1:'Libre Baskerville', fonte2:'Josefin Sans', bg:'#080808', ac:'cor do cliente + gold #C9A84C', estilo:'espaço negativo generoso, serif elegante, bordas finas' },
+    industrial:    { tema:'dark industrial metálico', fonte1:'Russo One', fonte2:'Barlow', bg:'#0a0a08', ac:'cor do cliente + laranja #E86A2F', estilo:'textura de metal, angulares, bold typography' },
+    minimalista:   { tema:'ultra minimal preto e branco', fonte1:'Helvetica Neue', fonte2:'Lato', bg:'#080808', ac:'cor do cliente', estilo:'grid preciso, muito espaço, sem decoração excessiva' },
+    robusto:       { tema:'dark & strong com vermelho', fonte1:'Barlow Condensed', fonte2:'Barlow', bg:'#060608', ac:'cor do cliente', estilo:'shapes angulares, stripes diagonais, força visual' },
+    corporativo:   { tema:'professional corporate navy', fonte1:'IBM Plex Sans', fonte2:'Roboto', bg:'#040810', ac:'cor do cliente', estilo:'grid empresarial, cores confiáveis, hierarquia tipográfica clara' },
+    luxuoso:       { tema:'luxury spa cream & gold', fonte1:'Cormorant', fonte2:'Questrial', bg:'#0d0a08', ac:'cor do cliente + gold #BFA070', estilo:'partículas flutuantes, gradientes suaves, simetria elegante' },
+    sereno:        { tema:'calm & nature verde suave', fonte1:'Gilda Display', fonte2:'Source Sans Pro', bg:'#060d08', ac:'cor do cliente + sage #7BAE7F', estilo:'formas orgânicas, ondas, much whitespace, calma visual' },
+    profissional:  { tema:'medical clean white dark', fonte1:'Nunito', fonte2:'Open Sans', bg:'#050b10', ac:'cor do cliente', estilo:'limpo, trust signals visuais, ícones médicos, confiança' },
+    clean:         { tema:'pharmacy clean & trust', fonte1:'Poppins', fonte2:'Lato', bg:'#050d10', ac:'cor do cliente', estilo:'cards brancos sobre dark, badges de confiança, grid limpo' },
+    energetico:    { tema:'fitness black & fire', fonte1:'Bebas Neue', fonte2:'Barlow', bg:'#050505', ac:'cor do cliente + amarelo #FFD600', estilo:'typography gigante, movimento constante, contador animado' },
+    solido:        { tema:'construction dark grey', fonte1:'Oswald', fonte2:'Barlow', bg:'#080808', ac:'cor do cliente', estilo:'angulares, texturas de concreto, bold headers' },
+    dinamico:      { tema:'edtech colorido & moderno', fonte1:'Nunito', fonte2:'Poppins', bg:'#050a14', ac:'cor do cliente', estilo:'progress bars animadas, cards de curso, badge de certificação' },
+    internacional: { tema:'global & multicultural', fonte1:'Noto Sans', fonte2:'Lato', bg:'#050810', ac:'cor do cliente', estilo:'bandeiras, mapas, animações de idioma' },
+    criativo:      { tema:'music art dark & colorido', fonte1:'Pacifico', fonte2:'Nunito', bg:'#0a0510', ac:'cor do cliente + violeta #7C3AED', estilo:'notas musicais animadas, efeito vinis, ondas de áudio' },
+    aventureiro:   { tema:'travel adventure vibrant', fonte1:'Bebas Neue', fonte2:'Nunito', bg:'#050d14', ac:'cor do cliente', estilo:'parallax, fotografia de destinos, cards de pacotes' },
+    verde:         { tema:'solar clean green energy', fonte1:'Montserrat', fonte2:'Open Sans', bg:'#050d08', ac:'cor do cliente + solar #FFB800', estilo:'ondas de energia, painéis solares, impacto ambiental' },
+    natural:       { tema:'agro farm green & earth', fonte1:'Playfair Display', fonte2:'Nunito', bg:'#060d05', ac:'cor do cliente + terra #8B7355', estilo:'folhas animadas, formas orgânicas, ligação à terra' },
+    maritimo:      { tema:'ocean blue & teal', fonte1:'Pacifico', fonte2:'Nunito', bg:'#050a14', ac:'cor do cliente + teal #0D9488', estilo:'ondas CSS, efeito água, paleta oceânica' },
+    institucional: { tema:'gov institutional navy', fonte1:'IBM Plex Serif', fonte2:'IBM Plex Sans', bg:'#040810', ac:'cor do cliente', estilo:'sério, confiável, brasão, estrutura formal' },
+    comunitario:   { tema:'community warm & accessible', fonte1:'Nunito', fonte2:'Open Sans', bg:'#050d08', ac:'cor do cliente', estilo:'rotas animadas, mapa de paragens, acessível' },
+    humano:        { tema:'social impact warm & humano', fonte1:'Merriweather', fonte2:'Open Sans', bg:'#080808', ac:'cor do cliente', estilo:'fotografias de impacto, contadores de vidas, histórias' }
+  };
+
+  var s = styleMap[t.style] || styleMap['moderno'];
+
+  /* Navegação SPA — funciona como os sites exemplo */
+  var navItems = getNAVItems(t);
+
+  var lines = [
+    '/* ═══════════════════════════════════════════════════════════',
+    '   XTACK — MASTER PROMPT v5.0',
+    '   Template : ' + t.name + ' | ID: #' + pad(t.id),
+    '   Categoria: ' + t.category + ' | Estilo: ' + t.style,
+    '   Agência  : XTACK OFICIAL 🇲🇿 | Gerado em: ' + date,
+    '═══════════════════════════════════════════════════════════ */',
+    '',
+    'Aja como um Desenvolvedor Web Sénior + Designer UI/UX de nível Awwwards.',
+    'Crie um site completo, funcional e VISUALMENTE DESLUMBRANTE para: "' + t.name + '".',
+    'O resultado deve parecer feito por uma agência de design internacional de topo.',
+    '',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    ' DADOS DO CLIENTE',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    '→ Responsável  : ' + owner,
+    '→ Empresa      : ' + company,
+    '→ WhatsApp     : ' + whatsapp,
+    '→ Email        : ' + email,
+    '→ Localização  : ' + location,
+    '→ Cor Principal: ' + color,
+    '→ Setor        : ' + t.category
+  ];
+  if (notes) lines.push('→ Observações  : ' + notes);
+
+  lines = lines.concat([
+    '',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    ' FORMATO OBRIGATÓRIO — FICHEIRO ÚNICO',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    '  ✓ UM único ficheiro .html — CSS e JS inline no mesmo ficheiro',
+    '  ✓ DEPLOY IMEDIATO — abrir o .html no browser já funciona 100%',
+    '  ✓ Sem dependências externas não declaradas',
+    '  ✓ Console JS limpo — zero erros',
+    '',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    ' STACK TÉCNICA OBRIGATÓRIA',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    '  ▸ Font Awesome 6.5 via CDN (jsDelivr com fallback cdnjs)',
+    '  ▸ AOS 3.0 — Animate On Scroll (via CDN oficial)',
+    '  ▸ Leaflet.js 1.9 — Mapa interativo (via CDN oficial)',
+    '  ▸ Google Fonts: ' + s.fonte1 + ' (display/títulos) + ' + s.fonte2 + ' (corpo)',
+    '    NUNCA usar Arial, Roboto, Inter genérico — fontes escolhidas = identidade visual',
+    '  ▸ HTML5 + CSS3 Variables (:root) + Vanilla JS ES6+',
+    '  ▸ AOS.init({ once: true, offset: 80, duration: 700 })',
+    '',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    ' DESIGN & IDENTIDADE VISUAL',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    '',
+    '▸ TEMA: ' + s.tema,
+    '▸ COR PRINCIPAL: ' + color + ' — use em gradientes, hovers, CTAs e acentos',
+    '▸ FUNDO: ' + s.bg + ' (ou próximo)',
+    '▸ ESTILO VISUAL: ' + s.estilo,
+    '▸ TIPOGRAFIA: ' + s.fonte1 + ' para títulos grandes, ' + s.fonte2 + ' para textos',
+    '',
+    'REGRAS DE DESIGN INEGOCIÁVEIS:',
+    '  ✓ Layout assimétrico e criativo — fuja de templates genéricos',
+    '  ✓ Animações CSS fluidas: transitions 0.3s ease, keyframes suaves',
+    '  ✓ Cards com glassmorphism (backdrop-filter: blur) onde aplicável',
+    '  ✓ Sombras dramáticas (box-shadow com a cor principal)',
+    '  ✓ Scroll suave: html { scroll-behavior: smooth; }',
+    '  ✓ CSS :root com TODAS as variáveis de cor e tamanho',
+    '  ✓ Hover effects em TODOS os elementos interativos',
+    '',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    ' SISTEMA DE NAVEGAÇÃO SPA (SINGLE-PAGE APP)',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    '',
+    'USAR OBRIGATORIAMENTE navegação SPA com secções que aparecem/desaparecem.',
+    'NÃO usar scroll normal entre secções — cada clique no menu mostra uma secção.',
+    '',
+    'IMPLEMENTAÇÃO JS (copiar este padrão exato):',
+    '  // CSS base para SPA:',
+    '  section { display: none; animation: fadeUp 0.55s ease both; }',
+    '  section.active { display: block; }',
+    '  @keyframes fadeUp {',
+    '    from { opacity: 0; transform: translateY(20px); }',
+    '    to   { opacity: 1; transform: translateY(0); }',
+    '  }',
+    '',
+    '  // JS para trocar secções:',
+    '  function showSection(id) {',
+    '    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));',
+    '    document.querySelectorAll(".nav-link").forEach(l => l.classList.remove("active"));',
+    '    document.getElementById(id).classList.add("active");',
+    '    event.target.classList.add("active");',
+    '    window.scrollTo(0, 0);',
+    '  }',
+    '',
+    '  // HTML dos links de navegação:',
+    '  // <button class="nav-link active" onclick="showSection(\'inicio\')">Início</button>',
+    '',
+    'SECÇÕES OBRIGATÓRIAS (IDs exatos):',
+  ].concat(navItems.map(function(n,i){ return '  ' + (i+1) + '. id="' + n.id + '" → ' + n.label + (n.note ? ' (' + n.note + ')' : ''); })).concat([
+    '',
+    '  A secção "inicio" começa com .active por defeito.',
+    '  Ao clicar num link, a secção anterior desaparece com fade-out,',
+    '  a nova aparece com fadeUp animation.',
+    '',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    ' HEADER FIXO & RESPONSIVO',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    '',
+    '  ▸ position: sticky; top: 0; z-index: 1000;',
+    '  ▸ backdrop-filter: blur(16px) — semi-transparente ao fazer scroll',
+    '  ▸ Logo: ícone FA + nome "' + company + '" com a cor ' + color,
+    '  ▸ Nav links: ' + navItems.map(function(n){ return n.label; }).join(' | '),
+    '  ▸ Botão CTA destacado (cor ' + color + '): "Contactar Agora" / "Reservar" / etc.',
+    '  ▸ Menu hamburger FUNCIONAL para mobile (toggle com animação ☰→✕)',
+    '  ▸ Nav fecha sozinha ao clicar num link no mobile',
+    '  ▸ Evento scroll: header.classList.toggle("scrolled") → muda padding e shadow',
+    '',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    ' DETALHE DE CADA SECÇÃO',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    ''
+  ]));
+
+  /* Descrição de cada secção */
+  navItems.forEach(function(n, i) {
+    lines.push((i+1) + '. SECÇÃO "' + n.id.toUpperCase() + '" — ' + n.label.toUpperCase());
+    n.content.forEach(function(c) { lines.push('   ' + c); });
+    lines.push('');
+  });
+
+  lines = lines.concat([
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    ' COMPONENTES ESPECIAIS OBRIGATÓRIOS',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    '',
+    '▸ BOTÃO WHATSAPP FLUTUANTE (bottom-right fixo, z-index: 9999)',
+    '  • background: #25D366; border-radius: 50%; padding: 14px;',
+    '  • Ícone FontAwesome fab fa-whatsapp (branco, font-size: 24px)',
+    '  • Animation: pulse infinito (box-shadow expand/contract)',
+    '  • href: "https://wa.me/' + wnum + '?text=Olá!%20Vim%20do%20site%20' + encodeURIComponent(company) + '"',
+    '  • Aparece depois de 2s (setTimeout) para não distrair o hero',
+    '',
+    '▸ JSON DATABASE (no topo do <script>, antes de tudo)',
+    '  const DATABASE = {',
+    '    empresa: {',
+    '      nome: "' + company + '",',
+    '      whatsapp: "' + whatsapp + '",',
+    '      email: "' + email + '",',
+    '      endereco: "' + location + '",',
+    '      cor: "' + color + '"',
+    '    },',
+    '    servicos: [',
+    '      // 6 serviços realistas e específicos para "' + t.name + '"',
+    '      // Cada um: { id, nome, preco:"X.XXX MT", descricao, icone:"fa-xxx" }',
+    '    ],',
+    '    depoimentos: [',
+    '      // 3 testemunhos realistas de clientes moçambicanos',
+    '      // Cada um: { nome, cidade, profissao, texto, estrelas:5 }',
+    '    ]',
+    '  };',
+    '  // Todo o conteúdo do site deve ser gerado a partir deste DATABASE.',
+    '',
+    '▸ TYPEWRITER HERO (JS puro — sem biblioteca externa)',
+    '  const frases = [',
+    '    "Frase impactante 1 sobre ' + t.name + '",',
+    '    "Frase impactante 2 com benefício claro",',
+    '    "Frase 3 com call-to-action implícito"',
+    '  ];',
+    '  // Velocidade: 80ms por letra | Pausa: 2000ms | Apaga: 40ms',
+    '',
+    '▸ COUNTER ANIMATION (IntersectionObserver)',
+    '  • 3–4 métricas numéricas (ex: 500+ Clientes, 5 Anos, 98% Satisfação)',
+    '  • Anima de 0 → valor final em 2s ao entrar no viewport',
+    '  • Formato: animateCounter(el, 0, 500, 2000)',
+    '',
+    '▸ MAPA LEAFLET.JS',
+    '  • Centro: coordenadas GPS de ' + location,
+    '  • Marcador com popup: nome "' + company + '" + endereço',
+    '  • Botão: "Como Chegar" → abre Google Maps',
+    '  • tile: OpenStreetMap ou CartoDB Dark (para tema dark)',
+    '',
+    '▸ PAGAMENTOS LOCAIS (badges na secção contacto ou rodapé)',
+    '  • M-Pesa | e-Mola | mkesh | Visa | Mastercard',
+    '  • Estilo: badges com bordas e ícones/logos representativos',
+    '',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    ' RESPONSIVIDADE — MOBILE FIRST',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    '  ✓ Breakpoints: 480px | 768px | 1024px | 1280px',
+    '  ✓ font-size com clamp(): clamp(2rem, 6vw, 4.5rem) para H1',
+    '  ✓ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))',
+    '  ✓ Botões touch-friendly: min-height 44px',
+    '  ✓ Imagens com max-width: 100%; height: auto',
+    '  ✓ Testar: iPhone SE (375px), iPad (768px), Desktop (1440px)',
+    '',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    ' SEO & META TAGS',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    '  <meta name="description" content="[Descrição de ' + company + ' em ' + location + ']">',
+    '  <meta property="og:title" content="' + company + ' | ' + t.name + '">',
+    '  <meta property="og:description" content="...">',
+    '  <meta property="og:image" content="[placeholder]">',
+    '  <meta name="theme-color" content="' + color + '">',
+    '',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    ' FOOTER COMPLETO',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    '  ▸ Logo + tagline de "' + company + '"',
+    '  ▸ 3 colunas: sobre | links rápidos | contactos',
+    '  ▸ Ícones sociais: Facebook | Instagram | WhatsApp (links reais)',
+    '  ▸ Copyright © ' + yr + ' ' + company + '. Todos os direitos reservados.',
+    '  ▸ "Desenvolvido com ❤ por XTACK OFICIAL 🇲🇿"',
+    '',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    ' PADRÕES DE QUALIDADE FINAIS',
+    '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+    '  ✓ Nenhum placeholder óbvio — conteúdo realista e específico para "' + t.name + '"',
+    '  ✓ Comentários no código: /* === SECÇÃO === */ para facilitar edição',
+    '  ✓ AOS: data-aos="fade-up" com data-aos-delay escalonado (100, 200, 300...)',
+    '  ✓ Todas as cores via CSS variables — fácil tema alternativo',
+    '  ✓ Nenhuma biblioteca não declarada na stack técnica',
+    '  ✓ Site abre e funciona 100% offline após descarregar (CDN é aceite)',
+    '',
+    'XTACK ENTERPRISE v5.0 — Moçambique Digital First 🇲🇿',
+    'Com amor da XTACK — Desenvolvido por XTACK OFICIAL'
+  ]);
+
+  return lines.join('\n');
+}
+
+/* ─── SECÇÕES DINÂMICAS POR TEMPLATE ─── */
+function getNAVItems(t) {
+  /* Default sections */
+  var base = [
+    { id:'inicio',       label:'Início',       note:'hero + typewriter', content:[
+      '• Hero section em fullscreen (min-height: 100vh)',
+      '• Typewriter effect com 3 frases sobre "' + t.name + '"',
+      '• Título H1 grande: font-size clamp(2.5rem, 7vw, 5rem)',
+      '• Subtítulo e localização (' + (getField('cfg-location','mob-cfg-location')||'Maputo, Moçambique') + ')',
+      '• 2 botões CTA: principal (bg ' + (getField('cfg-color','mob-cfg-color')||'cor principal') + ') + secundário (outline)',
+      '• Background: gradient mesh escuro + efeito visual temático',
+      '• Animação de entrada: fadeIn + translateY com delays escalonados',
+      '• Scroll indicator animado (arrow ou chevron a bouncing)'
+    ]},
+    { id:'sobre',        label:'Sobre',        note:'história + métricas', content:[
+      '• Título "Sobre Nós" ou "Sobre ' + (getField('cfg-company','mob-cfg-company')||'a Empresa') + '"',
+      '• 2 colunas: texto à esquerda (missão, valores, história), visual à direita',
+      '• Grid de 3–4 métricas com counter animation (IntersectionObserver)',
+      '• 3 pilares/valores com ícones FontAwesome e descrições curtas',
+      '• Elemento visual: gradiente + formas geométricas ou padrão do setor'
+    ]},
+    { id:'servicos',     label:'Serviços',     note:'cards do DATABASE', content:[
+      '• Título da secção com subtítulo descritivo',
+      '• Grid de 6 cards gerados dinamicamente via DATABASE.servicos',
+      '• Cada card: ícone FA, nome, descrição curta, preço em MT (Meticais)',
+      '• Hover: card eleva (translateY(-8px)) + brilha na cor ' + (getField('cfg-color','mob-cfg-color')||'principal'),
+      '• data-aos="fade-up" com delay escalonado (0, 100, 200, 300...)',
+      '• Botão CTA por card: "Saber Mais" ou "Contratar"'
+    ]},
+    { id:'testemunhos',  label:'Depoimentos',  note:'reviews + estrelas', content:[
+      '• Grid de 3 cards de testemunho gerados via DATABASE.depoimentos',
+      '• Cada card: avatar (iniciais coloridas), nome, cidade, profissão',
+      '• Avaliação ★★★★★ com animação de aparecimento estrela a estrela',
+      '• Texto do depoimento entre aspas curvas',
+      '• Cards com glassmorphism (backdrop-filter: blur)',
+      '• AOS: data-aos="fade-up" escalonado'
+    ]},
+    { id:'localizacao',  label:'Localização',  note:'mapa Leaflet', content:[
+      '• Layout 2 colunas: mapa à esquerda (60%), info à direita (40%)',
+      '• Mapa Leaflet.js centrado em coordenadas de ' + (getField('cfg-location','mob-cfg-location')||'Maputo, Moçambique'),
+      '• Marcador personalizado com popup: nome + endereço da empresa',
+      '• Botão "Como Chegar" → abre Google Maps com coordenadas',
+      '• Info box: endereço completo, telefone, email, horários de funcionamento',
+      '• Badges de pagamento: M-Pesa | e-Mola | mkesh | Visa | Mastercard'
+    ]},
+    { id:'contacto',     label:'Contacto',     note:'formulário + validação', content:[
+      '• Layout 2 colunas: formulário (esq) + info de contacto (dir)',
+      '• Campos: Nome completo, Email, Telefone (opcional), Mensagem',
+      '• Validação em tempo real com feedback visual (border vermelho/verde)',
+      '• Botão submit com loading state (spinner) ao clicar',
+      '• Mensagem de sucesso animada após "envio" (sem backend)',
+      '• Info: endereço, telefone, email, redes sociais com ícones FA'
+    ]}
+  ];
+
+  /* Personalização por categoria */
+  var cat = t.category;
+
+  if (cat === 'Alimentação') {
+    base.splice(3, 0, { id:'menu', label:'Menu', note:'ementa digital', content:[
+      '• Tabs de categoria (Entradas | Pratos Principais | Sobremesas | Bebidas)',
+      '• Cards do menu gerados via DATABASE — cada um com nome, descrição, preço MT',
+      '• Badge "Popular" ou "Chef Recomenda" em alguns items',
+      '• Preços em destaque com a cor principal',
+      '• Filtro por categoria via JS (mostrar/ocultar cards)',
+      '• Ícone de alérgenos (glúten, lactose, etc.) quando aplicável'
+    ]});
+  }
+
+  if (cat === 'Hotelaria' || cat === 'Turismo') {
+    base.splice(3, 0, { id:'quartos', label:'Quartos / Pacotes', note:'galeria + preços', content:[
+      '• Grid de quartos ou pacotes turísticos com imagem placeholder',
+      '• Cada card: nome, descrição, capacidade, preço/noite em MT + USD',
+      '• Hover: zoom na imagem + overlay escuro com botão "Reservar"',
+      '• Badge de disponibilidade: Disponível / Últimas Vagas',
+      '• Botão "Reservar" → abre WhatsApp com mensagem pré-formatada'
+    ]});
+  }
+
+  if (cat === 'Edtech' || cat === 'Educação') {
+    base.splice(3, 0, { id:'cursos', label:'Cursos', note:'catálogo de cursos', content:[
+      '• Grid de cursos gerados via DATABASE',
+      '• Cada card: imagem/ícone, título, duração, nível, preço MT',
+      '• Progress bar "popularidade" animada',
+      '• Badge: Online | Presencial | Híbrido',
+      '• Botão "Inscrever-se" → WhatsApp ou formulário de inscrição'
+    ]});
+  }
+
+  if (cat === 'Imóveis') {
+    base.splice(3, 0, { id:'imoveis', label:'Imóveis', note:'listagem + filtros', content:[
+      '• Filtros: Tipo (Venda/Aluguer) | Tipo (Casa/Apto/Comercial) | Preço',
+      '• Grid de propriedades com imagem placeholder, área m², preço MT/USD',
+      '• Badge: Novo | Destaque | Vendido',
+      '• Modal ou card expandido ao clicar com mais detalhes',
+      '• Botão de contacto WhatsApp por propriedade'
+    ]});
+  }
+
+  if (cat === 'Vendas' || cat === 'Moda') {
+    base.splice(3, 0, { id:'produtos', label:'Produtos', note:'catálogo + filtros', content:[
+      '• Filtros por categoria via JS (mostrar/ocultar)',
+      '• Grid de produtos gerados via DATABASE',
+      '• Cada card: imagem placeholder, nome, preço MT, badge de categoria',
+      '• Hover: quick-view ou zoom leve',
+      '• Botão "Encomendar" → WhatsApp com produto pré-selecionado'
+    ]});
+  }
+
+  if (cat === 'Recrutamento') {
+    base.splice(3, 0, { id:'vagas', label:'Vagas', note:'ofertas de emprego', content:[
+      '• Lista de vagas geradas via DATABASE',
+      '• Cada vaga: cargo, empresa, localização, tipo (full-time/part-time), salário',
+      '• Badge: Urgente | Remoto | Novo',
+      '• Botão "Candidatar" → formulário ou WhatsApp',
+      '• Filtros: área | localização | tipo de contrato'
+    ]});
+  }
+
+  if (cat === 'Media') {
+    base.splice(3, 0, { id:'noticias', label:'Notícias', note:'artigos recentes', content:[
+      '• Grid de artigos: imagem, categoria, título, data, autor, excerto',
+      '• Badge de categoria com cores diferentes por tema',
+      '• Artigo em destaque (tamanho maior) no topo',
+      '• Botão "Ler Mais" → abre modal com artigo completo (gerado via JS)',
+      '• Contador de leituras animado'
+    ]});
+  }
+
+  return base;
+}
+
+/* ─── COPY ─── */
+function copyPrompt() {
+  var isMob = window.innerWidth < 768;
+  var el = document.getElementById(isMob ? 'mobMainPrompt' : 'mainPrompt');
+  var val = el ? el.value : '';
+  if (!val.trim()) { showToast('Selecione um template primeiro!', 'warn'); return; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(val).then(function() { showToast('Prompt copiado com sucesso!', 'ok'); });
+  } else {
+    el.select();
+    document.execCommand('copy');
+    showToast('Prompt copiado!', 'ok');
+  }
+}
+
+/* ─── TABS ─── */
+function switchTab(name, btn) {
+  document.getElementById('tabPrompt').style.display = name === 'prompt' ? 'flex' : 'none';
+  document.getElementById('tabConfig').style.display = name === 'config' ? 'flex' : 'none';
+  var tabs = document.querySelectorAll('.tabs .tab');
+  for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active');
+  btn.classList.add('active');
+}
+function switchMobTab(name, btn) {
+  document.getElementById('mobTabPrompt').style.display = name === 'prompt' ? 'flex' : 'none';
+  document.getElementById('mobTabConfig').style.display = name === 'config' ? 'flex' : 'none';
+  var tabs = document.querySelectorAll('.mob-tabs .mob-tab');
+  for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active');
+  btn.classList.add('active');
+}
+
+/* ─── CONFIG ─── */
+function applyConfig() {
+  showToast('Configurações aplicadas!', 'ok');
+  if (active) selectTemplate(active);
+}
+function applyMobConfig() {
+  ['owner','company','whatsapp','location','email','color','notes'].forEach(function(f) {
+    var mob = document.getElementById('mob-cfg-' + f);
+    var dsk = document.getElementById('cfg-' + f);
+    if (mob && dsk) dsk.value = mob.value;
+  });
+  showToast('Configurações aplicadas!', 'ok');
+  if (active) selectTemplate(active);
+}
+
+/* ─── TOAST ─── */
+function showToast(msg, type) {
+  var el = document.getElementById('toast');
+  var ic = document.getElementById('toastIcon');
+  document.getElementById('toastMsg').textContent = msg;
+  if (type === 'ok') {
+    el.style.background = 'rgba(0,255,170,0.1)'; el.style.borderColor = 'rgba(0,255,170,0.3)'; el.style.color = '#00ffaa';
+    ic.className = 'fas fa-check-circle'; ic.textContent = '✓';
+  } else {
+    el.style.background = 'rgba(255,200,0,0.08)'; el.style.borderColor = 'rgba(255,200,0,0.3)'; el.style.color = '#ffd700';
+    ic.className = 'fas fa-triangle-exclamation'; ic.textContent = '⚠';
+  }
+  el.classList.add('show');
+  setTimeout(function() { el.classList.remove('show'); }, 3000);
+}
+
+/* ─── INIT ─── */
+buildList('');
+selectTemplate(TEMPLATES[0]);
+</script>
+</body>
+</html>
